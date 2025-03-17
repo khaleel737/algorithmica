@@ -1,12 +1,5 @@
 {
     "version": 2,
-    "build": {
-      "env": {
-        "HUGO_VERSION": "0.96.0",
-        "HUGO_ENV": "production",
-        "HUGO_ENABLEGITINFO": "true"
-      }
-    },
     "builds": [
       {
         "src": "package.json",
@@ -16,12 +9,11 @@
         }
       }
     ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/$1"
-      }
-    ],
-    "installCommand": "git submodule update --init --recursive"
+    "env": {
+      "HUGO_VERSION": "0.96.0",
+      "HUGO_ENV": "production",
+      "HUGO_ENABLEGITINFO": "true"
+    },
+    "buildCommand": "git submodule update --init --recursive && hugo --gc --minify"
   }
   
