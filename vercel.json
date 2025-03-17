@@ -1,6 +1,5 @@
 {
-    "buildCommand": "hugo --gc --minify",
-    "installCommand": "git submodule update --init --recursive",
+    "version": 2,
     "build": {
       "env": {
         "HUGO_VERSION": "0.96.0",
@@ -8,40 +7,21 @@
         "HUGO_ENABLEGITINFO": "true"
       }
     },
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "public"
+        }
+      }
+    ],
     "routes": [
       {
         "src": "/(.*)",
         "dest": "/$1"
       }
     ],
-    "deployments": {
-      "production": {
-        "buildCommand": "hugo --gc --minify"
-      },
-      "split1": {
-        "buildCommand": "hugo --gc --minify --enableGitInfo",
-        "env": {
-          "HUGO_VERSION": "0.96.0",
-          "HUGO_ENV": "production"
-        }
-      },
-      "deploy-preview": {
-        "buildCommand": "hugo --gc --minify --buildFuture -b $VERCEL_URL",
-        "env": {
-          "HUGO_VERSION": "0.96.0"
-        }
-      },
-      "branch-deploy": {
-        "buildCommand": "hugo --gc --minify -b $VERCEL_URL",
-        "env": {
-          "HUGO_VERSION": "0.96.0"
-        }
-      },
-      "next": {
-        "env": {
-          "HUGO_ENABLEGITINFO": "true"
-        }
-      }
-    }
+    "installCommand": "git submodule update --init --recursive"
   }
   
