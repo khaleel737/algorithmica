@@ -1,4 +1,4 @@
-baseURL: "https://algorithmica-dusky.vercel.app/en"
+baseURL: "https://ru.algorithmica.org/"
 theme:
 - algorithmica
 - reveal-hugo
@@ -27,14 +27,14 @@ sectionPagesMenu: main
 languages:
   en:
     title: Algorithmica
-    baseURL: https://algorithmica-dusky.vercel.app/en
+    baseURL: https://en.algorithmica.org
     contentDir: content/english
     languageName: English
     languageCode: "en-us"
     weight: 1
   ru:
     title: Алгоритмика
-    baseURL: https://algorithmica-dusky.vercel.app/ru
+    baseURL: https://ru.algorithmica.org
     contentDir: content/russian
     languageName: Русский
     languageCode: "ru-ru"
