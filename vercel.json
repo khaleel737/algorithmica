@@ -1,19 +1,17 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "public"
-        }
-      }
-    ],
-    "env": {
-      "HUGO_VERSION": "0.96.0",
-      "HUGO_ENV": "production",
-      "HUGO_ENABLEGITINFO": "true"
+    "build": {
+      "env": {
+        "HUGO_VERSION": "0.96.0",
+        "HUGO_ENV": "production",
+        "HUGO_ENABLEGITINFO": "true"
+      },
+      "buildCommand": "hugo --gc --minify"
     },
-    "buildCommand": "git submodule update --init --recursive && hugo --gc --minify"
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/$1"
+      }
+    ]
   }
   
