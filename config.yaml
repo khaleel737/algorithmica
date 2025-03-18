@@ -1,4 +1,4 @@
-baseURL: "https://ru.algorithmica.org/"
+baseURL: "https://algorithmica-dusky.vercel.app/en"
 theme:
 - algorithmica
 - reveal-hugo
