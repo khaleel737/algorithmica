@@ -5,13 +5,13 @@
         "HUGO_ENV": "production",
         "HUGO_ENABLEGITINFO": "true"
       },
-      "buildCommand": "hugo --gc --minify"
     },
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/$1"
-      }
-    ]
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
+        }
+    ],
+    "buildCommand": "hugo --gc --minify"
   }
   
